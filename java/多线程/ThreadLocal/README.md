@@ -66,11 +66,11 @@ public class Demo {
 
 在`Thread`类里面有一个`ThreadLocalMap`的变量，而`ThreadLocalMap`是`ThreadLocal`的一个内部类，同时`ThreadLocalMap`有一个`Entry`数组类型的变量，这个`Entry`类是继承了弱引用。
 
-![](E:/project/study/doc/Java/Java%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%BA%BF%E7%A8%8B/pic/threadlocal3.png)
+![](./pic/threadlocal3.png)
 
 `ThreadLocal`的`set`其实是调用了`ThreadLocalMap`的`set`，而`ThreadLocalMap`的`set`是在`Entry[]`里面存放一个`Entry`对象，而`Entry`的构造方法有两个参数，一个`key`和一个`value`，`key`就是`ThreadLocal`的引用，而`value`是我们要设置的值。
 
-![](E:/project/study/doc/Java/Java%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%BA%BF%E7%A8%8B/pic/threadlocal2.png)
+![](./pic/threadlocal2.png)
 
 ## :hot_pepper:1.5 源码解析
 
@@ -98,46 +98,46 @@ public class Demo {
   在添加新元素之前，首先的确定新元素在数组中的索引，在确定新元素的索引是下面这行代码，调用`ThreadLocal`的`threadLocalHashCode`变量，然后和数组长度减1做一个与运算，因为`tab`的长度`len`是2的`n`次方，`len-1`转换成二进制相当于高位是0，后面全是1，`key.threadLocalHashCode `和`len-1`做与运算相当于`key.threadLocalHashCode `只保留低`n`位。
 
   ```java
-  // 确定索引
+// 确定索引
   int i = key.threadLocalHashCode & (len-1);
-  
+
   private final int threadLocalHashCode = nextHashCode();
-  
+
   private static AtomicInteger nextHashCode = new AtomicInteger();
-  
+
   private static final int HASH_INCREMENT = 0x61c88647;
-  
+
   private static int nextHashCode() {
-    return nextHashCode.getAndAdd(HASH_INCREMENT);
+  return nextHashCode.getAndAdd(HASH_INCREMENT);
   }
   ```
-
+  
   然后看下`key.threadLocalHashCode `的原理并且是如何和斐波那契产生关联的，看下面的源码。
-
+  
   调用`threadLocalHashCode`会调用一个`nextHashCode`方法，这个方法是一个`AtomicInteger`类型变量，初始值是0，调用一次就会加上这个常量`HASH_INCREMENT`，而这个常量是`0x61c88647`换算成十进制是1640531527。
-
+  
   而黄金分割数(Math.sqrt(5) - 1)/2乘(1L << 32)也是1640531527，这样`0x61c88647`就和黄金分割数产生了关联，而黄金分割数能保证均匀。
-
-  > 斐波那契数列的一些性质比如在 n 很大时， Fn+1/Fn≈ϕ ，其中 ϕ 是黄金分割数，等于 1.618
-
+  
+> 斐波那契数列的一些性质比如在 n 很大时， Fn+1/Fn≈ϕ ，其中 ϕ 是黄金分割数，等于 1.618
   
 
-  **在`ThreadLocalMap`中如何解决冲突，具体过程如下：**
-
-  在确定了新元素在`tab`上的索引的时候，这个位置有可能有元素，这样就产生了冲突，当冲突产生了之后`ThreadLocalMap`采用线性探测开放地址来解决冲突，冲突了之后调用`nextIndex`方法确定下一个索引位置。每次冲突了索引就增加1，当索引大于数组长度又从0开始
-
-  ```java
+  
+**在`ThreadLocalMap`中如何解决冲突，具体过程如下：**
+  
+在确定了新元素在`tab`上的索引的时候，这个位置有可能有元素，这样就产生了冲突，当冲突产生了之后`ThreadLocalMap`采用线性探测开放地址来解决冲突，冲突了之后调用`nextIndex`方法确定下一个索引位置。每次冲突了索引就增加1，当索引大于数组长度又从0开始
+  
+```java
   private static int nextIndex(int i, int len) {
-    return ((i + 1 < len) ? i + 1 : 0);
+  return ((i + 1 < len) ? i + 1 : 0);
   }
   ```
-
+  
   `k == key `当前`key`和当前索引的`k`相等的时候，相当于在线程内调用同一个`ThreadLocal`的`set`方法两次，就用新的`value`替换以前的值即可。
-
-  `k = null`，也就是数组的当前位置`Entry`对象不为空但是`key`是空的也就是`key`被回收了，说明当前索引位置可以用，用新的`key`和`value`调用`replaceStaleEntry`替换掉即可。
-
+  
+`k = null`，也就是数组的当前位置`Entry`对象不为空但是`key`是空的也就是`key`被回收了，说明当前索引位置可以用，用新的`key`和`value`调用`replaceStaleEntry`替换掉即可。
+  
   > 在replaceStaleEntry有个比较有意思的设计，就是该方法判断当前节点已经出现了key=null的情况，那说明该数组其它位置也有这样的情况，会做一次删除脏Entry的操作。
-
+  
   ```java
   private void set(ThreadLocal<?> key, Object value) {
     Entry[] tab = table;
@@ -165,7 +165,7 @@ public class Demo {
 
 ## :cherries:2.1 内存划分
 
-![](E:/project/study/doc/Java/Java%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%BA%BF%E7%A8%8B/pic/threadlocal1.png)
+![](./pic/threadlocal1.png)
 
 `JVM`会在堆空间创建一个`Thread`对象，同时也会在堆空间创建一个`ThreadLocal`对象，当进行`set`操作的时候，在堆空间创建一个`Entry`对象，`Entry`对象的`key`弱引用`ThreadLocal`对象
 
@@ -201,6 +201,6 @@ public class Demo {
 
 如果`ThreadLocal`设计成强引用，就算是`TreadLocalRef`的引用断开了，也会因为`Entry`的`key`引用导致堆空间的`ThreadLocal`对象不能被回收，这样加大的内存溢出的概率。
 
-## 2.4 ThreadLocal线程安全的吗
+##  2.4 ThreadLocal线程安全的吗
 
 不一定，如果多个线程`set`的是同一个对象，其它线程去`get`的时候也是同一个对象引用，这样并不能保证线程安全。
