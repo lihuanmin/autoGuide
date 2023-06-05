@@ -1,8 +1,21 @@
-**坚持一个月，看成果**
+- Java
+  - 基础
+    - [JDK代理](https://editor.csdn.net/md/?articleId=120606318)
+    - [Java Instrument](https://editor.csdn.net/md/?articleId=123339412)
+  - 多线程
+    - [Java多线程：线程基础（1）](https://editor.csdn.net/md/?articleId=115512936)
+    - [Java多线程：线程同步（1）- volatile关键字](https://editor.csdn.net/md/?articleId=130961960)
+    - [Java多线程：线程同步（2）- ThreadLocal理解与分析](https://editor.csdn.net/md/?articleId=130096301)
+    - [Java多线程：线程同步（3）- synchronized关键字](https://editor.csdn.net/md/?articleId=124284263)
+  - IO
+    - [Java IO流](https://editor.csdn.net/md/?articleId=124064687)
 
-- java多线程
-
-  [ThreadLocal](https://github.com/lihuanmin/autoGuide/tree/main/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/ThreadLocal)
-
-  
-
+- mybatis
+  - [Mybatis自定义拦截器@Intercepts失效](https://editor.csdn.net/md/?articleId=129380156)
+- spring
+  - [Spring系列之缓存Cache](https://editor.csdn.net/md/?articleId=124286286)
+  - [SpringCloud搭建Eureka](https://editor.csdn.net/md/?articleId=104635451)
+- Linux
+  - [缩小文件系统和磁盘分区](https://mp.csdn.net/mp_blog/creation/editor/84880863)
+- JVM
+  - [JVM-类加载机制](https://editor.csdn.net/md/?articleId=121308335)
