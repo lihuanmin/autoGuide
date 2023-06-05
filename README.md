@@ -1,14 +1,15 @@
 - Java
   - 基础
-    - [JDK代理](https://editor.csdn.net/md/?articleId=120606318)
+    - [JDK代理](https://gitee.com/lihuanmin/autoGuide/tree/main/java/%E5%9F%BA%E7%A1%80/%E4%BB%A3%E7%90%86)
     - [Java Instrument](https://editor.csdn.net/md/?articleId=123339412)
   - 多线程
-    - [Java多线程：线程基础（1）](https://editor.csdn.net/md/?articleId=115512936)
-    - [Java多线程：线程同步（1）- volatile关键字](https://editor.csdn.net/md/?articleId=130961960)
-    - [Java多线程：线程同步（2）- ThreadLocal理解与分析](https://editor.csdn.net/md/?articleId=130096301)
-    - [Java多线程：线程同步（3）- synchronized关键字](https://editor.csdn.net/md/?articleId=124284263)
+    - [Java多线程：线程基础（1）](https://gitee.com/lihuanmin/autoGuide/tree/main/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80)
+    - [Java多线程：线程同步（1）- volatile关键字](https://gitee.com/lihuanmin/autoGuide/tree/main/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/volatile)
+    - [Java多线程：线程同步（2）- ThreadLocal理解与分析](https://gitee.com/lihuanmin/autoGuide/tree/main/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/ThreadLocal)
+    - [Java多线程：线程同步（3）- synchronized关键字](https://gitee.com/lihuanmin/autoGuide/tree/main/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/synchronized)
   - IO
-    - [Java IO流](https://editor.csdn.net/md/?articleId=124064687)
+    - [Java IO流](https://gitee.com/lihuanmin/autoGuide/tree/main/java/io/io)
+    - [NIO](https://gitee.com/lihuanmin/autoGuide/tree/main/java/io/io)
 
 - mybatis
   - [Mybatis自定义拦截器@Intercepts失效](https://editor.csdn.net/md/?articleId=129380156)
