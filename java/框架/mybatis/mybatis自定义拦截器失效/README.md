@@ -1,7 +1,7 @@
 # :confused: 一、问题描述
 新搭建的一个`springboot+mybatis`，使用`@Intercepts`进行分页拦截，不同的是这次项目是多数据源，以前一直都这么这么用，然后这次新项目居然没有实现分页。
 
-<div align=center><img src="pic/mybatis1.png"/></div>
+<div align=center><img src="pic/mybatis1.gif"/></div>
 
 # 🧐 二、面向搜索编程
 在网上找了一圈，大致说法有几种：
@@ -17,7 +17,7 @@
 
 上面三个方向，在本项目中好像这些都没有关系
 
-<div align=center><img src="pic/mybatis2.png"/></div>
+<div align=center><img src="pic/mybatis2.jpg"/></div>
 
  # :smirk: 三、终极大招
 到这一步实在是没办法，只有把代码回退了到刚搭建好的零状态，改成单数据源，简单写个查询。发现分页又可以了。离谱到家了
@@ -37,7 +37,7 @@ if (!isEmpty(this.plugins)) {
       }
     }
 ```
-<div align=center><img src="pic/mybatis4.png"/></div>
+<div align=center><img src="pic/mybatis4.jpg"/></div>
 
 我在初始化`SqlSessionFactory`的时候，完全没有考虑到拦截器的问题，下面是我初始化`SqlSessionFactory`的配置
 
@@ -70,4 +70,4 @@ public SqlSessionFactory primarySqlSessionFactory(@Qualifier("primaryDataSource"
 ```
 然后再试一下，发现分页可以了。
 
-<div align=center><img src="pic/mybatis5.png"/></div>
+<div align=center><img src="pic/mybatis5.jpg"/></div>
