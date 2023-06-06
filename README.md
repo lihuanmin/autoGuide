@@ -1,7 +1,7 @@
 - Java
   - 基础
     - [JDK代理](https://gitee.com/lihuanmin/autoGuide/tree/main/java/%E5%9F%BA%E7%A1%80/%E4%BB%A3%E7%90%86)
-    - [Java Instrument](https://editor.csdn.net/md/?articleId=123339412)
+    - [Java Instrument](https://gitee.com/lihuanmin/autoGuide/tree/main/java/%E5%9F%BA%E7%A1%80/Instrument)
   - 多线程
     - [Java多线程：线程基础（1）](https://gitee.com/lihuanmin/autoGuide/tree/main/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80)
     - [Java多线程：线程同步（1）- volatile关键字](https://gitee.com/lihuanmin/autoGuide/tree/main/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/volatile)
@@ -9,14 +9,14 @@
     - [Java多线程：线程同步（3）- synchronized关键字](https://gitee.com/lihuanmin/autoGuide/tree/main/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/synchronized)
   - IO
     - [Java IO流](https://gitee.com/lihuanmin/autoGuide/tree/main/java/io/io)
-    - [NIO](https://gitee.com/lihuanmin/autoGuide/tree/main/java/io/io)
+    - [NIO](https://gitee.com/lihuanmin/autoGuide/tree/main/java/io/NIO)
 
 - mybatis
-  - [Mybatis自定义拦截器@Intercepts失效](https://editor.csdn.net/md/?articleId=129380156)
+  - [Mybatis自定义拦截器@Intercepts失效](https://gitee.com/lihuanmin/autoGuide/tree/main/java/%E6%A1%86%E6%9E%B6/mybatis/mybatis%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8B%A6%E6%88%AA%E5%99%A8%E5%A4%B1%E6%95%88)
 - spring
-  - [Spring系列之缓存Cache](https://editor.csdn.net/md/?articleId=124286286)
-  - [SpringCloud搭建Eureka](https://editor.csdn.net/md/?articleId=104635451)
+  - [Spring系列之缓存Cache](https://gitee.com/lihuanmin/autoGuide/tree/main/java/%E6%A1%86%E6%9E%B6/spring/Spring%20Cache%E5%9F%BA%E7%A1%80)
+  - [SpringCloud搭建Eureka](-)
 - Linux
-  - [缩小文件系统和磁盘分区](https://mp.csdn.net/mp_blog/creation/editor/84880863)
+  - [缩小文件系统和磁盘分区](-)
 - JVM
-  - [JVM-类加载机制](https://editor.csdn.net/md/?articleId=121308335)
+  - [JVM-类加载机制](https://gitee.com/lihuanmin/autoGuide/tree/main/java/jvm/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6)
