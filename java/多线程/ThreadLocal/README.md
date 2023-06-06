@@ -66,11 +66,11 @@ public class Demo {
 
 在`Thread`类里面有一个`ThreadLocalMap`的变量，而`ThreadLocalMap`是`ThreadLocal`的一个内部类，同时`ThreadLocalMap`有一个`Entry`数组类型的变量，这个`Entry`类是继承了弱引用。
 
-![](./pic/threadlocal3.png)
+<div align=center><img src="pic/threadlocal3.png"/></div>
 
 `ThreadLocal`的`set`其实是调用了`ThreadLocalMap`的`set`，而`ThreadLocalMap`的`set`是在`Entry[]`里面存放一个`Entry`对象，而`Entry`的构造方法有两个参数，一个`key`和一个`value`，`key`就是`ThreadLocal`的引用，而`value`是我们要设置的值。
 
-![](./pic/threadlocal2.png)
+<div align=center><img src="pic/threadlocal2.png"/></div>
 
 ## :hot_pepper:1.5 源码解析
 
@@ -98,7 +98,6 @@ public class Demo {
   在添加新元素之前，首先的确定新元素在数组中的索引，在确定新元素的索引是下面这行代码，调用`ThreadLocal`的`threadLocalHashCode`变量，然后和数组长度减1做一个与运算，因为`tab`的长度`len`是2的`n`次方，`len-1`转换成二进制相当于高位是0，后面全是1，`key.threadLocalHashCode `和`len-1`做与运算相当于`key.threadLocalHashCode `只保留低`n`位。
 
   ```java
-// 确定索引
   int i = key.threadLocalHashCode & (len-1);
 
   private final int threadLocalHashCode = nextHashCode();
@@ -165,7 +164,7 @@ public class Demo {
 
 ## :cherries:2.1 内存划分
 
-![](./pic/threadlocal1.png)
+<div align=center><img src="pic/threadlocal1.png"/></div>
 
 `JVM`会在堆空间创建一个`Thread`对象，同时也会在堆空间创建一个`ThreadLocal`对象，当进行`set`操作的时候，在堆空间创建一个`Entry`对象，`Entry`对象的`key`弱引用`ThreadLocal`对象
 

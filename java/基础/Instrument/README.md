@@ -87,7 +87,7 @@
 
 ## 整体流程图示
 
-![](./pic1.png)
+<div align=center><img src="pic1.png"/></div>
 
 ## 目标程序
 

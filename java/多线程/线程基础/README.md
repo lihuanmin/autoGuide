@@ -14,7 +14,7 @@ Java线程分为**守护线程(Daemon Thread)**和**用户线程(User Thread)**�
 
 ## 线程的继承体系
 
-![](./pic/thread-1.png)
+<div align=center><img src="pic/thread-1.png"/></div>
 
 - Runnable
 
@@ -154,7 +154,7 @@ public enum State {
 
 线程从创建后就在几个状态中切换。下面是一个线程状态转换图，调用不同的方法就可以切换线程线程的状态。
 
-![](./pic/thread_life_cycle.png)
+<div align=center><img src="pic/thread_life_cycle.png"/></div>
 
 ### 可运行状态-RUNNABLE
 
@@ -364,11 +364,11 @@ private static int ctlOf(int rs, int wc) {
 
 ### 状态转换
 
-![](./pic/thread-5.png)
+<div align=center><img src="pic/thread-5.png"/></div>
 
 ## 继承体系
 
-![](./pic/thread-3.png)
+<div align=center><img src="pic/thread-3.png"/></div>
 
 ## 线程池概念
 
@@ -475,7 +475,7 @@ public static class DiscardOldestPolicy implements RejectedExecutionHandler
 >
 > 执行优先级：核心线程、非核心线程、任务队列
 
- ![](./pic/thread-4.png)
+<div align=center><img src="pic/thread-4.png"/></div>
 
 ## 源码分析
 

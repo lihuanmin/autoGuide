@@ -26,7 +26,7 @@ JVM有三个自带的类加载器：**Bootstrap ClassLoader**、**Extention Clas
 
 `ExtClassLoader`和`AppClassLoader`都是`Launcher`类的静态内部类，`Launcher`类是虚拟机的入口，它是由`BootStrapClassLoader`加载的，在`Launcher`类的构造方法中初始化了`Ext`和`App`两种类型类加载器。
 
-![](./pic/class_loader_structure.png)
+<div align=center><img src="pic/class_loader_structure.png"/></div>
 
 ## 双亲委派模型
 
@@ -38,7 +38,8 @@ Java虚拟机加载class文件是按需加载的方式，当需要使用某个�
 
 普通类的加载器是`AppClassLoader`, `AppClassLoader`的父加载器是`ExtClassLoader`, `ExtClassLoader`的父加载器是`BootstrapClassLoader`。
 
-![](./pic/class_loader_struct.png)
+<div align=center><img src="pic/class_loader_struct.png"/></div>
+
 
 ### 双亲委派模型源码
 
@@ -143,7 +144,7 @@ protected Class<?> loadClass(String name, boolean resolve){
 >
 > 3.这样一级一级向下之后最初的那个加载器，或者中间某一个加载器在自己的目录中找到目标类
 
-![](./pic/parents_delegation_model.png)
+<div align=center><img src="pic/parents_delegation_model.png"/></div>
 
 # 类加载
 
@@ -157,7 +158,7 @@ protected Class<?> loadClass(String name, boolean resolve){
 
 ​		类从加载到内存开始，到卸载出内存为止，它的整个生命周期包括：加载、验证、准备、解析、初始化、使用、卸载。其中验证、准备、解析三个过程统称为连接。
 
-![](./pic/jvm-1.png)
+<div align=center><img src="pic/jvm-1.png"/></div>
 
 ​		加载、验证、准备、初始化这几个阶段的顺序是确定的，但是解析过程有可能是在初始化之后再开始，这是为了支持Java语言的运行绑定也称为动态绑定。
 
