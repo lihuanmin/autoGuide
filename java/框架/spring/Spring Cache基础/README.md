@@ -263,21 +263,3 @@ public String deleteUser(@PathVariable("id")String id) {
 @ConditionalOnMissingBean(CacheManager.class)
 class CaffeineCacheConfiguration {}
 ```
-
-## 4.2 注解缓存
-
-https://blog.csdn.net/qq_35971258/article/details/128727311?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167939611916782427488965%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=167939611916782427488965&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~hot_rank-1-128727311-null-null.142^v74^insert_down38,201^v4^add_ask,239^v2^insert_chatgpt&utm_term=%40Cacheable%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90&spm=1018.2226.3001.4187
-
-
-
-
-
-https://www.jianshu.com/p/3d85df64a2c3
-
-```
-@EnableWebMvc会导致spring-boot autoconfigure失效就是下面这个，可以看到注解导入的影响到下面这个了
-```
-
-```
-WebMvcAutoConfiguration
-```
