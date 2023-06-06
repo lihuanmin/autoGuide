@@ -47,7 +47,7 @@ public abstract class InputStream implements Closeable
 
 ### 实现类
 
-![](./pic/inputstream.png)
+<div align=center><img src="pic/inputstream.png"/></div>
 
 ### 方法
 
@@ -90,7 +90,7 @@ public abstract class OutputStream implements Closeable, Flushable
 
 ### 实现类
 
-![](./pic/outputstream.png)
+<div align=center><img src="pic/outputstream.png"/></div>
 
 ### 方法
 
@@ -125,7 +125,7 @@ public abstract class Reader implements Readable, Closeable
 
 ### 实现类
 
-![](./pic/reader.png)
+<div align=center><img src="pic/reader.png"/></div>
 
 ### 方法
 
@@ -183,7 +183,7 @@ public abstract class Writer implements Appendable, Closeable, Flushable
 
 ### 实现类
 
-![](./pic/writer.png)
+<div align=center><img src="pic/writer.png"/></div>
 
 ### 方法
 
@@ -246,13 +246,13 @@ public Writer append(char c);
 
 字节流数据是从文件到输入输出程序。
 
-![](./pic/pic7.png)
+<div align=center><img src="pic/pic7.png"/></div>
 
 ### 字符文件流
 
 字符流数据是先流向字节流再流向字符流。
 
-![](./pic/pic8.png)
+<div align=center><img src="pic/pic8.png"/></div>
 
 ## 源码解析
 
@@ -344,9 +344,7 @@ fos.close();
 
 内存流是从内存到输入输出程序
 
-![](./pic/pic3.png)
-
-
+<div align=center><img src="pic/pic3.png"/></div>
 
 ## 源码分析
 
@@ -481,13 +479,13 @@ System.out.println(charArrayWriter);
 
 字节缓冲流是处理流，是在节点流的基础上操作的
 
-![](./pic/pic9.png)
+<div align=center><img src="pic/pic9.png"/></div>
 
 ### 字符缓冲流
 
 字符缓冲流是处理流，是在节点流的基础上操作的
 
-![](./pic/pic10.png)
+<div align=center><img src="pic/pic10.png"/></div>
 
 ## 源码解析
 
@@ -800,7 +798,7 @@ bufferedWriter.close();
 
 ## 数据流向
 
-![](./pic/pic5.png)
+<div align=center><img src="pic/pic5.png"/></div>
 
 ## 示例
 
@@ -848,7 +846,7 @@ class User implements Serializable{
 
 ## 数据流向
 
-![](./pic/pic2.png)
+<div align=center><img src="pic/pic2.png"/></div>
 
 ## 示例
 
